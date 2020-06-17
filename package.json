@@ -1,0 +1,28 @@
+{
+  "name": "expense_tracker_mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd expense_tracker && npm run build",
+    "install-app":"cd expense_tracker && npm install",
+    "start": "node expense_tracker/backend/server.js",
+    "heroku-postbuild": "npm run install-app && npm run build"
+  },
+  "engines": {
+    "node": "12.16.2"
+},
+  "keywords": [],
+  "author": "Sharmistha Parui",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "jwt-decode": "^2.2.0",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  }
+}

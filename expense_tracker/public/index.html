@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+   
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <style>
+      .react-datepicker-popper {
+          z-index: 9999 !important;
+      }
+      .vertical { 
+            border-left: 2px solid rgb(212, 210, 210); 
+            height: 1000px; 
+           
+        } 
+        .btn-round {
+          display:block;
+          height: 70px;
+          width: 70px;
+          border-radius: 50%;
+          background-color:#283593; 
+          margin: 0;
+          position: absolute;
+          top: 35%;
+          left: 35%;
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+
+        }
+        .dash{
+          border: dashed 2px rgb(226, 226, 226);
+          padding: 20px;
+          display: block;
+          width:230px;
+          height: 220px;
+          padding-left: 10px;
+          position: relative;
+        }
+        .dash-txt{
+          position: absolute;
+          top: 65%;
+          left: 23%;
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+        #grad1 {
+        background-image: linear-gradient( #ffea00,#f5f5f5);
+      }
+      #grad2{
+        background-image: linear-gradient(#f5f5f5, #ffea00);
+      }
+     
+    </style>
+    
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
