@@ -18,7 +18,7 @@ class DisplayInfo extends Component
       <div key={index} >
           <br></br>
           <div className="col m2  center">
-            <i className="material-icons small indigo-text text-darken-3">face</i>
+            <i className="material-icons small indigo-text text-darken-3">account_circle</i>
             <p style={{fontFamily: "monospace",color:"#283593",fontSize:"12px"}}>{user.username}</p>
           </div>
           <div className="col m2 center ">

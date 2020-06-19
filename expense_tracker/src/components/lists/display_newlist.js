@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { createNewList} from "../../actions/listActions";
+import { createNewList,fetchCurrentList} from "../../actions/listActions";
 import { createNewEventList} from "../../actions/eventActions";
 import {updateBudget} from "../../actions/authActions";
 import SpendingChart from "../insights/line_chart";
@@ -57,11 +57,15 @@ class DisplayNewList extends Component
         monthly_budget:this.state.monthly_budget,
         userid:user.id   
     };
+    console.log(info);
     this.props.createNewList(info);
-    this.props.updateBudget(info);
     this.props.createNewEventList(info);
+    this.props.fetchCurrentList(user);
     console.log("list created");
-    this.props.history("/dashboard");
+    
+   
+    //alert("new expense period started");
+    this.props.history.push("/dashboard")
     };
 
     render()
@@ -141,10 +145,10 @@ class DisplayNewList extends Component
               </div>
               </div>
               <div className="row">
-              <div className="col m8 offset-m3" style={{ paddingLeft: "11.250px" }}>
+              <div className="col m6 " >
                 <button
                   style={{
-                    width: "500px",
+                    width: "400px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     marginTop: "1rem"
@@ -154,7 +158,22 @@ class DisplayNewList extends Component
                 >
                   Start New List
                 </button>
-                <p></p>
+               
+              </div>
+              <div className="col m6" >
+                <button
+                  style={{
+                    width: "400px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                  }}
+                  onClick={() => this.props.history.push("/dashboard")}
+                  className="btn btn-large waves-effect waves-light hoverable indigo darken-3"
+                >
+                 Go back to dashboard
+                </button>
+               
               </div>
             </div>
           </form>
@@ -168,6 +187,7 @@ DisplayNewList.propTypes = {
     createNewEventList:PropTypes.func.isRequired,
     updateBudget:PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
   };
 
 const mapStateToProps = state => ({
@@ -176,5 +196,5 @@ const mapStateToProps = state => ({
   });
 export default withRouter(connect(
     mapStateToProps,
-    {createNewList,updateBudget,createNewEventList}
+    {createNewList,updateBudget,createNewEventList,fetchCurrentList}
   )(DisplayNewList));

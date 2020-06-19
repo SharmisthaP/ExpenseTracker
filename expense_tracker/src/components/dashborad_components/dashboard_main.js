@@ -12,6 +12,7 @@ import DisplayInfo from "../lists/display_info";
 import DisplayNewList from "../lists/display_newlist";
 import DisplayAllEvents from "../events/display_allevents";
 import BudgetUpdate from "./budget_component";
+import {withRouter } from "react-router-dom";
 
 
 
@@ -138,7 +139,9 @@ class Dashboard extends Component
     var today=new Date();
     var ends=currentlist.slice(0,1).map((list)=> list.end_date);
     var end_date=new Date(ends[0]);
-
+    console.log(today.getTime()>end_date.getTime());
+    console.log("today"+today);
+    console.log("ending day" + end_date);
     if(today.getTime()>end_date.getTime())
     {
       return(
@@ -233,7 +236,7 @@ const mapStateToProps = state => ({
     list: state.list,
     events:state.events
   });
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     {logoutUser,fetchCurrentList,fetchCurrentEvents}
-  )(Dashboard);
+  )(Dashboard));

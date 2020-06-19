@@ -7,17 +7,17 @@ const path = require('path');
 //require('dotenv').config();
 
 const app=express();
-const port=process.env.PORT || 5000;
+const port=process.env.PORT || 7000;
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(cors());
 app.use(express.json());
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
-});
+});*/
 
 require("./config/passport")(passport);
 

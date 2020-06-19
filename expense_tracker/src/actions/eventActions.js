@@ -4,7 +4,7 @@ import {FETCH_CURRENT_EVENTS,UPDATED_EVENT,CREATE_EVENT,CREATE_EVENT_LIST,SET_UP
 export const fetchCurrentEvents=(user) => dispatch=>{
 
     console.log("fetch event action called");
-    axios.post("http://localhost:5000/events/currentEvents",user)
+    axios.post("http://localhost:7000/events/currentEvents",user)
     .then(res=>{
         const events=res.data;
         console.log("events fetched");
@@ -23,7 +23,7 @@ export const getCurrentEvents=(events)=>{
 
 export const updateEvent=(event)=>dispatch=>{
     console.log("event update action called");
-    const url="http://localhost:5000/events/updateCurrentEvent/"+event.listid;
+    const url="http://localhost:7000/events/updateCurrentEvent/"+event.listid;
     console.log(url);
     axios.post(url,event)
     .then(res=>{
@@ -35,7 +35,7 @@ export const updateEvent=(event)=>dispatch=>{
 
 export const addEvent=(event)=>dispatch=>{
     console.log("add event action");
-    const url ="http://localhost:5000/events/addEvent/"+event.list_id;
+    const url ="http://localhost:7000/events/addEvent/"+event.list_id;
     console.log("url "+url);
     axios.post(url,event)
     .then(res=>{
@@ -47,7 +47,7 @@ export const addEvent=(event)=>dispatch=>{
 
 export const createNewEventList=(info)=>dispatch=>{
     console.log("create new list action");
-    axios.post("http://localhost:5000/events/createNewEventList",info)
+    axios.post("http://localhost:7000/events/createNewEventList",info)
     .then(res=>{
         console.log(res);
         dispatch({type:CREATE_EVENT_LIST});
