@@ -48,8 +48,8 @@ if(process.env.NODE_ENV === 'production')
     res.sendFile(path.resolve(__dirname +'/../build/index.html'));
   });
 }
-const HOST = 'localhost';
-app.listen(port,HOST,() =>{
+//const HOST = 'localhost';
+app.listen(port,() =>{
   console.log(`Server running at :${port}/`);
 });
 process.on('unhandledRejection', (reason, promise) => {
