@@ -4,10 +4,11 @@ const mongoose=require('mongoose');
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require('path');
-//require('dotenv').config();
+require('dotenv').config();
 
 const app=express();
 const port=process.env.PORT || 7000;
+const hostname = process.env.HOST || 'localhost';
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
@@ -48,8 +49,8 @@ if(process.env.NODE_ENV === 'production')
   });
 }
 
-app.listen(port,() =>{
-    console.log(`server port: ${port} running`);
+app.listen(port,hostname,() =>{
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
 process.on('unhandledRejection', (reason, promise) => {
     console.log('Unhandled Rejection at:', promise, 'reason:', reason);
