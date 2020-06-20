@@ -21,7 +21,7 @@ export const registerUser = (user, history) => dispatch => {
 //login-get user token
 export const loginUser= (user,history) =>dispatch=>{
     axios
-    .post("http://localhost:5000/users/login", user)
+    .post("http://127.0.0.1:5000/users/login", user)
     .then(res=>{
         //console.log("auth action called");
         const {token}=res.data;
