@@ -4,7 +4,7 @@ import {FETCH_CURRENT_LIST,UPDATED_LIST,CREATE_LIST} from "./types";
 export const fetchCurrentList=(user) => dispatch=>{
 
     console.log("fetch list action called");
-    axios.post("http://localhost:7000/expense_lists/currentList",user)
+    axios.post("http://localhost:5000/expense_lists/currentList",user)
     .then(res=>{
         const list=res.data;
         console.log("list fetched");
@@ -22,7 +22,7 @@ export const getCurrentList=(list)=>{
 };
 export const updateCurrentList=(list)=>dispatch=>{
     console.log("list update action called");
-    const url="http://localhost:7000/expense_lists/updateCurrentList/"+list.id;
+    const url="http://localhost:5000/expense_lists/updateCurrentList/"+list.id;
     console.log(url);
     axios.post(url,list)
     .then(res=>{
@@ -34,7 +34,7 @@ export const updateCurrentList=(list)=>dispatch=>{
 
 export const createNewList=(info)=>dispatch=>{
     console.log("create new list action");
-    axios.post("http://localhost:7000/expense_lists/createNewList",info)
+    axios.post("http://localhost:5000/expense_lists/createNewList",info)
     .then(res=>{
         console.log(res);
         dispatch({type:CREATE_LIST});
