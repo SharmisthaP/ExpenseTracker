@@ -8,12 +8,11 @@ require('dotenv').config();
 
 const app=express();
 const port=process.env.PORT || 7000;
-//const hostname = process.env.HOST || 'localhost';
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 app.use(passport.initialize());
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -48,7 +47,7 @@ if(process.env.NODE_ENV === 'production')
     res.sendFile(path.resolve(__dirname +'/../build/index.html'));
   });
 }
-//const HOST = 'localhost';
+
 app.listen(port,() =>{
   console.log(`Server running at :${port}/`);
 });
