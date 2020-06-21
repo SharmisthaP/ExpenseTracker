@@ -8,7 +8,7 @@ export const registerUser = (user, history) => dispatch => {
   console.log("auth called");
   console.log(user);
     axios
-      .post("http://localhost:5000/users/register", user)
+      .post("/users/register", user)
       .then(res => {console.log("user added");history.push("/login");}) // re-direct to login on successful register history.push("/login");
       .catch(err =>{
         console.log(err);
@@ -21,7 +21,7 @@ export const registerUser = (user, history) => dispatch => {
 //login-get user token
 export const loginUser= (user,history) =>dispatch=>{
     axios
-    .post("http://localhost:5000/users/login", user)
+    .post("/users/login", user)
     .then(res=>{
         //console.log("auth action called");
         const {token}=res.data;
@@ -58,7 +58,7 @@ export const logoutUser = () => dispatch => {
 export const updateBudget=(info)=>dispatch=>{
 
   console.log(info.userid);
-  const url="http://localhost:5000/users/updateBudget/"+info.userid;
+  const url="/users/updateBudget/"+info.userid;
   console.log("auth url : "+url);
   axios
   .post(url,info)
