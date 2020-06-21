@@ -4,7 +4,7 @@ import {FETCH_CURRENT_LIST,UPDATED_LIST,CREATE_LIST} from "./types";
 export const fetchCurrentList=(user) => dispatch=>{
 
     console.log("fetch list action called");
-    axios.post("http://localhost:5000/expense_lists/currentList",user)
+    axios.post("https://cors-anywhere.herokuapp.com/http://localhost:5000/expense_lists/currentList",user)
     .then(res=>{
         const list=res.data;
         console.log("list fetched");
