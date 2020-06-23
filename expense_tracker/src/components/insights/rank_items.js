@@ -138,7 +138,7 @@ class RankItems extends Component
                    
                     <div className="collapsible-header">
                         <i className="material-icons">emoji_events</i>
-                        <span style={{fontFamily: "monospace",color:"#283593",fontSize:"16px",fontWeight:"bold"}} className="indigo-text text-darken-3 center">Click to see rank of categories according to your <br></br> spending</span>
+                        <span style={{fontFamily: "monospace",color:"#283593",fontSize:"16px",fontWeight:"bold"}} className="indigo-text text-darken-3 center">Click to see rank of categories according to your spending</span>
                         
                     </div>
                     <div className="collapsible-body">

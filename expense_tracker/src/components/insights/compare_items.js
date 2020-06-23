@@ -29,43 +29,79 @@ class CompareItems extends Component
         const {currentlist} = this.props.list;
         const {eventlist} = this.props.events;
 
-        const two_events=eventlist.slice(0,2).map((event)=>{return event});
+        if(currentlist.length>=2)
+        {
+            const two_events=eventlist.slice(0,2).map((event)=>{return event});
+            const two_lists=currentlist.slice(0,2).map((list)=>{return list});
 
-        const two_lists=currentlist.slice(0,2).map((list)=>{return list});
-        console.log(two_lists);
+            console.log(two_lists);
 
-        const list1=two_lists[0];
-        const list2=two_lists[1];
+            const list1=two_lists[0];
+            const list2=two_lists[1];
 
-        var event1=0;
-        // eslint-disable-next-line
-        two_events[0].events.map((event)=>{
+            var event1=0;
             // eslint-disable-next-line
-            event.event_items.map((item)=>{
-            event1=event1+item.cost
-            })
-        });
-        var event2=0;
-        // eslint-disable-next-line
-        two_events[1].events.map((event)=>{
+            two_events[0].events.map((event)=>{
+                // eslint-disable-next-line
+                event.event_items.map((item)=>{
+                event1=event1+item.cost
+                })
+            });
+            var event2=0;
             // eslint-disable-next-line
-            event.event_items.map((item)=>{
-            event2=event2+item.cost
-            })
-        });
-        this.setState({
-            grocery: list1.grocery-list2.grocery,
-            fresh_produce: list1.fresh_produce-list2.fresh_produce,
-            medicine: list1.medicine-list2.medicine,
-            stationaries: list1.stationaries-list2.stationaries,
-            electricity: list1.electricity-list2.electricity,
-            rents: list1.rents-list2.rents,
-            monthly_subscriptions: list1.monthly_subscriptions-list2.monthly_subscriptions,
-            bakery: list1.bakery-list2.bakery,
-            toiletries: list1.toiletries-list2.toiletries,
-            misc: list1.misc-list2.misc,
-            events:event1-event2
-        });
+            two_events[1].events.map((event)=>{
+                // eslint-disable-next-line
+                event.event_items.map((item)=>{
+                event2=event2+item.cost
+                })
+            });
+            this.setState({
+                grocery: list1.grocery-list2.grocery,
+                fresh_produce: list1.fresh_produce-list2.fresh_produce,
+                medicine: list1.medicine-list2.medicine,
+                stationaries: list1.stationaries-list2.stationaries,
+                electricity: list1.electricity-list2.electricity,
+                rents: list1.rents-list2.rents,
+                monthly_subscriptions: list1.monthly_subscriptions-list2.monthly_subscriptions,
+                bakery: list1.bakery-list2.bakery,
+                toiletries: list1.toiletries-list2.toiletries,
+                misc: list1.misc-list2.misc,
+                events:event1-event2
+            });
+        }
+        else 
+        {
+            const two_events=eventlist.slice(0,1).map((event)=>{return event});
+            const two_lists=currentlist.slice(0,1).map((list)=>{return list});
+
+            const list1=two_lists[0];
+
+            var event_total=0;
+            // eslint-disable-next-line
+            two_events[0].events.map((event)=>{
+                // eslint-disable-next-line
+                event.event_items.map((item)=>{
+                event_total=event_total+item.cost
+                })
+            });
+
+            this.setState({
+                grocery: list1.grocery,
+                fresh_produce: list1.fresh_produce,
+                medicine: list1.medicine,
+                stationaries: list1.stationaries,
+                electricity: list1.electricity,
+                rents: list1.rents,
+                monthly_subscriptions: list1.monthly_subscriptions,
+                bakery: list1.bakery,
+                toiletries: list1.toiletries,
+                misc: list1.misc,
+                events:event_total
+            });
+
+
+
+        }
         M.AutoInit();
         
     }
@@ -78,7 +114,7 @@ class CompareItems extends Component
                 <li>
                 <div className="collapsible-header ">
                     <i className="material-icons">swap_vert</i>
-                    <span style={{fontFamily: "monospace",color:"#283593",fontSize:"16px",fontWeight:"bold"}} className="indigo-text text-darken-3 center">Click to see comparison of expense categories over the last two periods</span>
+                    <span style={{fontFamily: "monospace",color:"#283593",fontSize:"16px",fontWeight:"bold"}} className="indigo-text text-darken-3 center">Click to see comparison of expenses over the last two periods</span>
                 </div>
                 <div className="collapsible-body">
                 <ul className="collection">

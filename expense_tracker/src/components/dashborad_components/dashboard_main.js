@@ -22,6 +22,7 @@ class Dashboard extends Component
 {
   componentDidMount()
   {
+    window.scrollTo(0, 0);
       const {user}=this.props.auth;
       console.log("componentdidmount in dashboard");
       //console.log(user.username);

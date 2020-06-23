@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import {updateEvent,fetchCurrentEvents,setUpdateId} from"../../actions/eventActions";
-import {withRouter } from "react-router-dom";
+import {withRouter,Link } from "react-router-dom";
 var moment = require('moment');
 
 class ViewEvent extends Component
@@ -19,7 +19,7 @@ class ViewEvent extends Component
     componentDidMount()
     {
        
-       
+        window.scrollTo(0, 0);
         const{eventlist}=this.props.events;
         const events=eventlist[0].events;
         const updateid=this.props.match.params.id;
@@ -97,7 +97,10 @@ class ViewEvent extends Component
            
             return(
             <div className="container">
-               
+               <Link to="/dashboard" className="btn-flat waves-effect">
+                    <i className="material-icons left">keyboard_backspace</i> 
+                    <span className="blue-text text-accent-3">Back to home</span> 
+                </Link>
                    
                 <h4 className="center" style={{fontFamily: "monospace",color:"#283593",fontWeight:"bold"}}>{event.event_name}</h4>
                     
@@ -137,7 +140,7 @@ class ViewEvent extends Component
                             />
                             </td>
                             <td>
-                                <button  className="btn waves-effect waves-light hoverable indigo darken-3" value={idx} onClick={this.handleRemoveRow}>Delete Row</button>
+                                <button  className="btn hoverable indigo darken-3" value={idx} onClick={this.handleRemoveRow}>Delete Row</button>
                             </td>
                         </tr>
                     ))}
@@ -147,7 +150,7 @@ class ViewEvent extends Component
                 <div className="row center">  
                     <button style={{width: "200px",borderRadius: "3px",letterSpacing: "1.5px", marginTop: "1rem"}}
                     onClick={this.handleAddRow}
-                    className="btn btn-large waves-effect waves-light hoverable indigo darken-3"
+                    className="btn btn-large  hoverable indigo darken-3"
                     >
                         + Add Row
                     </button>
@@ -156,7 +159,7 @@ class ViewEvent extends Component
                 <div className="row center">  
                     <button style={{width: "300px",borderRadius: "3px",letterSpacing: "1.5px", marginTop: "1rem"}}
                     onClick={this.onSubmit}
-                    className="btn btn-large waves-effect waves-light hoverable indigo darken-3"
+                    className="btn btn-large  hoverable indigo darken-3"
                     >
                        Save Changes
                     </button>

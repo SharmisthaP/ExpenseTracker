@@ -5,6 +5,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
+import 'materialize-css/dist/css/materialize.min.css';
 
 import Navbar from "./components/navbar.component";
 import Landing from "./components/landing.component";

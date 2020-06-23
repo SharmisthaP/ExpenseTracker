@@ -26,6 +26,7 @@ class DisplayNewList extends Component
     }
     componentDidMount()
     {
+      window.scrollTo(0, 0);
         const {user}=this.props.auth;
         this.setState({
             monthly_budget:user.monthly_budget

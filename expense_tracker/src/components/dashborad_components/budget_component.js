@@ -57,7 +57,7 @@ class BudgetUpdate extends Component {
         return(
         <>
             <a href="/#" ref={Tooltip => {this.Tooltip = Tooltip;}}
-            className="waves-effect waves-light modal-trigger btn-floating btn-large indigo darken-3 tooltipped"
+            className="modal-trigger btn-floating btn-large indigo darken-3 tooltipped"
             data-position="left" 
             data-tooltip="Update current budget"
             data-target="modal1">

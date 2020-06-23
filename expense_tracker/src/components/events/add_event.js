@@ -157,7 +157,7 @@ class AddEvent extends Component
                                         />
                                         </td>
                                         <td>
-                                        <button  className="btn waves-effect waves-light hoverable indigo darken-3" onClick={idx => this.handleRemoveRow(idx)}>Delete Row</button>
+                                        <button  className="btn btn-large hoverable indigo darken-3" onClick={idx => this.handleRemoveRow(idx)}>Delete Row</button>
                                         </td>
                     
                                     </tr>
@@ -170,7 +170,7 @@ class AddEvent extends Component
                         
                             <button style={{width: "200px",borderRadius: "3px",letterSpacing: "1.5px", marginTop: "1rem"}}
                             onClick={this.handleAddRow}
-                            className="btn btn-large waves-effect waves-light hoverable indigo darken-3"
+                            className="btn btn-large hoverable indigo darken-3"
                             >
                             + Add Row
                             </button>
@@ -179,7 +179,7 @@ class AddEvent extends Component
                     <br></br>
                     <div className="row center">
                         
-                            <button onClick={this.onSubmit} style={{width: "300px",borderRadius: "3px",letterSpacing: "1.5px", marginTop: "1rem"}} type="submit" className="btn btn-large waves-effect waves-light hoverable indigo darken-3">
+                            <button onClick={this.onSubmit} style={{width: "300px",borderRadius: "3px",letterSpacing: "1.5px", marginTop: "1rem"}} type="submit" className="btn btn-large  hoverable indigo darken-3">
                                 Create Event
                             </button>
                     </div>   

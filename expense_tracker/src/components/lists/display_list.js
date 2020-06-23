@@ -145,7 +145,7 @@ class DisplayList extends Component
     
                 <div className=" center " style={{ paddingLeft: "11.250px" }}>
                     <button style={{width: "500px",borderRadius: "3px",letterSpacing: "1.5px", marginTop: "1rem"}}
-                      type="submit" className="btn btn-large waves-effect waves-light hoverable indigo darken-3">
+                      type="submit" className="btn btn-large  hoverable indigo darken-3">
                       <span className="yellow-text text-accnet-3">Update List</span>
                     </button>
                 </div>
