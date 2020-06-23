@@ -130,10 +130,7 @@ class Dashboard extends Component
   render()
   {
 
-    <button style={{ width: "100px", borderRadius: "5px",marginTop: "1rem"}} onClick={this.onLogoutClick} className="btn  waves-effect waves-light hoverable indigo darken-3">
-              Logout
-            </button>
-    /*const {currentlist} = this.props.list;
+    const {currentlist} = this.props.list;
     const {eventlist} = this.props.events;
     
     if(Object.keys(currentlist).length === 0)
@@ -224,7 +221,7 @@ class Dashboard extends Component
           
       
         );
-      }*/
+      }
     
   }
 }
